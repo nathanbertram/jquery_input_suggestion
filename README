@@ -1,0 +1,17 @@
+1. Include jquery.input_suggestion.js to your applicable /javascripts/ directory
+
+2. Setup your in your applicable application.js file or wherever your please:
+$(document).ready(function(){
+  initInputSuggestion();
+});
+
+3. Setup your input field defaults wherever you please
+  <input name="pirate[name]" data-suggestion-text="Yarr Doe" />
+  - or -
+  = pirate_form.input :name, 'data-suggestion-text' => 'Yarr Doe'
+
+4. Setup a style input.suggestion_text in your appropriate css for mo' cool effect:
+   input.suggestion_text {
+    color: #ccc;
+   }
+   
