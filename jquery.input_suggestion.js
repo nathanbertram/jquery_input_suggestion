@@ -5,7 +5,7 @@ function initInputSuggestion(custom_settings){
   };
   var settings = $.extend(true, default_settings, custom_settings);
     
-  $('input['+settings['input_selctor_param']+']').each(function(){
+  $('input['+settings['input_selctor_param']+'], textarea['+settings['input_selctor_param']+']').each(function(){
     var elem = $(this);
 
     if(elem.attr('value') == ''){
@@ -28,8 +28,8 @@ function initInputSuggestion(custom_settings){
   });
 
   // Clear the default text before the form is submitted
-  $('input['+settings['input_selctor_param']+']').parents().submit(function(){
-    $('input['+settings['input_selctor_param']+']').each(function(){
+  $('input['+settings['input_selctor_param']+'], textarea['+settings['input_selctor_param']+']').parents().submit(function(){
+    $('input['+settings['input_selctor_param']+'], textarea['+settings['input_selctor_param']+']').each(function(){
       if ($(this).hasClass(settings['active_class'])) this.value = '';
     });
   });
